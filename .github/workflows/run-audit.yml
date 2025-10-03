@@ -1,0 +1,49 @@
+name: Run Audit
+
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: "Start (YYYY-MM-DD)"
+        required: true
+        default: "2024-04-01"
+      end:
+        description: "End (YYYY-MM-DD, exclusive)"
+        required: true
+        default: "2024-05-01"
+      partner:
+        description: "Partner (e.g., teepublicvip)"
+        required: true
+        default: "teepublicvip"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Seed database
+        run: python app.py seed
+
+      - name: Run audit
+        run: |
+          python app.py report \
+            --start "${{ github.event.inputs.start }}" \
+            --end   "${{ github.event.inputs.end }}" \
+            --partner "${{ github.event.inputs.partner }}" \
+            --out audit_rebate.csv
+
+      - name: Upload CSV artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-rebate
+          path: audit_rebate.csv
