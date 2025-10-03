@@ -55,4 +55,5 @@ After it completes (about 15 seg), enter in the workflow and download the file f
 <img width="1545" height="549" alt="image" src="https://github.com/user-attachments/assets/be1c09d7-635b-4d48-b5b0-b72c1435d644" />
 
 Output preview:
-<img width="1456" height="650" alt="image" src="https://github.com/user-attachments/assets/e3c9ca46-6101-4ed8-a6b0-34245b5e0dc1" />
+<img width="473" height="693" alt="image" src="https://github.com/user-attachments/assets/847d4996-7d2d-41ee-ba6a-a57d90d3c507" />
+
