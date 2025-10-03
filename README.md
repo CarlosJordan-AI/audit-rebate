@@ -55,5 +55,12 @@ After it completes (about 15 seg), enter in the workflow and download the file f
 <img width="1545" height="549" alt="image" src="https://github.com/user-attachments/assets/be1c09d7-635b-4d48-b5b0-b72c1435d644" />
 
 Output preview:
+
 <img width="473" height="693" alt="image" src="https://github.com/user-attachments/assets/847d4996-7d2d-41ee-ba6a-a57d90d3c507" />
+
+### 🧠 Key highlights
+- Parameterized SQL query (`:partner`, `:factory`, `:start`)  
+- Reproducible fake dataset seeded automatically  
+- Outputs `audit_rebate.csv` with order, carrier, and invoice data  
+- Optional: run interactively in **Codespaces**, or trigger via **GitHub Actions**  
 
